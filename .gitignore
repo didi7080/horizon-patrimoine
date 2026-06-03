@@ -1,0 +1,16 @@
+# Documents personnels — ne pas publier
+*.pdf
+*.jpg
+*.jpeg
+image.png
+Export_*
+Avis_*
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+*.log
+
+# Dev
+node_modules/
+.env
