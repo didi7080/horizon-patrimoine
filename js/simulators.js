@@ -1,4 +1,4 @@
-/* ══════════════════════════════════════════
+﻿/* ══════════════════════════════════════════
    PRISE DE RENDEZ-VOUS — Conseil Patrimonial Indépendant
    Flow simplifié : Prénom + Téléphone → mailto pré-rempli + confirmation
    ⚠️  Remplacer ADVISOR_EMAIL par l'adresse email professionnelle réelle
