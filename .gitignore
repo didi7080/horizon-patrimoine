@@ -14,3 +14,7 @@ Thumbs.db
 # Dev
 node_modules/
 .env
+
+# Installers
+*.exe
+*.msi
