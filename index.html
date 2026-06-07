@@ -5,6 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Conseil Patrimonial Indépendant — Bilan &amp; Gestion de Patrimoine</title>
   <meta name="description" content="Conseiller patrimonial indépendant. PER, SCPI, assurance vie, prêt immobilier, transmission, prévoyance. Premier bilan patrimonial gratuit." />
+  <link rel="canonical" href="https://www.dp-conseil-patrimoine.fr/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="DP Conseil &amp; Gestion de Patrimoine — Conseiller Patrimonial Indépendant" />
+  <meta property="og:description" content="Conseiller patrimonial indépendant. PER, SCPI, assurance vie, prêt immobilier, transmission, prévoyance. Premier bilan patrimonial gratuit." />
+  <meta property="og:url" content="https://www.dp-conseil-patrimoine.fr/" />
+  <meta name="twitter:card" content="summary" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/simulators.css" />
 </head>
@@ -420,6 +426,7 @@
         <ul class="footer-links">
           <li><a href="tel:0770058416">07 70 05 84 16</a></li>
           <li><a href="mailto:dimitripelcy@gmail.com">dimitripelcy@gmail.com</a></li>
+          <li><a href="https://www.dp-conseil-patrimoine.fr">www.dp-conseil-patrimoine.fr</a></li>
           <li><a href="#contact">Prendre rendez-vous</a></li>
         </ul>
       </div>
@@ -431,7 +438,55 @@
   </div>
 </footer>
 
+<!-- ══════════════════════ POP-UP INVITATION PARTENAIRES ══════════════════════ -->
+<div class="modal-overlay" id="invite-modal" aria-hidden="true">
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="invite-title">
+    <button class="modal-close" data-invite-close aria-label="Fermer">&times;</button>
+    <div class="modal-pad modal-invite">
+      <div class="modal-invite-icon">🤝</div>
+      <h3 id="invite-title">Découvrez notre réseau de partenaires</h3>
+      <p>Agences immobilières, notaires, experts-comptables, courtiers… Trouvez le professionnel de confiance le plus adapté à vos besoins, près de chez vous.</p>
+      <a href="partenaires.html" class="btn btn-primary btn-arrow">Voir les partenaires</a>
+      <button class="modal-invite-skip" data-invite-close>Plus tard</button>
+    </div>
+  </div>
+</div>
+
 <script src="js/main.js"></script>
 <script src="js/simulators.js"></script>
+<script>
+/* ── Pop-up d'invitation vers la page Partenaires (1 fois par visiteur) ── */
+(function () {
+  var modal = document.getElementById('invite-modal');
+  if (!modal) return;
+  var KEY = 'dpcp_invite_partenaires_v1';
+  var seen = false;
+  try { seen = localStorage.getItem(KEY) === '1'; } catch (e) {}
+
+  var mark = function () { try { localStorage.setItem(KEY, '1'); } catch (e) {} };
+  var close = function () {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+    modal.setAttribute('aria-hidden', 'true');
+    mark();
+  };
+
+  if (!seen) {
+    setTimeout(function () {
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    }, 6000);
+  }
+
+  modal.addEventListener('click', function (e) {
+    if (e.target.closest('a[href]')) { mark(); return; }            // clic sur "Voir les partenaires"
+    if (e.target === modal || e.target.closest('[data-invite-close]')) close();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && modal.classList.contains('open')) close();
+  });
+})();
+</script>
 </body>
 </html>

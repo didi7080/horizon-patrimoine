@@ -98,32 +98,22 @@
 <!-- ══════════════════════ NOS PARTENAIRES ══════════════════════ -->
 <section class="section" id="partenaires">
   <div class="container">
-    <div class="text-center" style="margin-bottom:48px;">
+    <div class="text-center" style="margin-bottom:36px;">
       <span class="section-label">Nos partenaires</span>
-      <h2 class="section-title animate-in">Ils nous font confiance</h2>
-      <p style="color:var(--gray-500);max-width:560px;margin:0 auto;font-size:15px;">Des professionnels de confiance avec qui nous collaborons régulièrement pour offrir un accompagnement patrimonial complet.</p>
+      <h2 class="section-title animate-in">Trouvez le bon partenaire</h2>
+      <p style="color:var(--gray-600);max-width:600px;margin:0 auto;font-size:15px;">Recherchez le professionnel de confiance le plus adapt&eacute; &agrave; votre besoin &mdash; par secteur d'activit&eacute; et par zone g&eacute;ographique.</p>
     </div>
 
-    <!-- Zone partenaires — à compléter -->
-    <div id="partners-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:24px;max-width:900px;margin:0 auto;">
-
-      <!-- Exemple de carte partenaire (à dupliquer et remplir) -->
-      <!--
-      <div style="background:var(--white);border-radius:var(--radius);padding:28px;border:1px solid var(--gray-200);text-align:center;">
-        <div style="font-size:36px;margin-bottom:12px;">��</div>
-        <div style="font-weight:700;font-size:15px;color:var(--navy-700);margin-bottom:4px;">Nom Agence</div>
-        <div style="font-size:12px;color:var(--gray-500);text-transform:uppercase;letter-spacing:1px;">Agence immobilière</div>
-        <div style="font-size:13px;color:var(--gray-600);margin-top:12px;">Ville ou zone géographique</div>
+    <div class="partner-search">
+      <input type="text" id="partner-q" placeholder="Rechercher un partenaire, un m&eacute;tier, une ville&hellip;" aria-label="Rechercher un partenaire" />
+      <div class="partner-search-row">
+        <select id="partner-sector" aria-label="Filtrer par secteur d'activit&eacute;"></select>
+        <select id="partner-zone" aria-label="Filtrer par zone g&eacute;ographique"></select>
       </div>
-      -->
-
-      <!-- Espace vide affiché tant qu'aucun partenaire n'est renseigné -->
-      <div style="grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--gray-400);" id="no-partners-msg">
-        <div style="font-size:40px;margin-bottom:16px;">��</div>
-        <p style="font-size:15px;">Les premiers partenaires seront affichés ici prochainement.<br/>Intéressé(e) ? Contactez-nous via le formulaire ci-dessous.</p>
-      </div>
-
     </div>
+    <div class="partner-search-count" id="partner-count"></div>
+
+    <div id="partners-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:24px;max-width:900px;margin:0 auto;"></div>
   </div>
 </section>
 
@@ -242,6 +232,7 @@
         <ul class="footer-links">
           <li><a href="tel:0770058416">07 70 05 84 16</a></li>
           <li><a href="mailto:dimitripelcy@gmail.com">dimitripelcy@gmail.com</a></li>
+          <li><a href="https://www.dp-conseil-patrimoine.fr">www.dp-conseil-patrimoine.fr</a></li>
           <li><a href="index.html#contact">Prendre rendez-vous</a></li>
         </ul>
       </div>
@@ -255,6 +246,7 @@
 
 <script src="js/main.js"></script>
 <script src="js/simulators.js"></script>
+<script src="js/partenaires.js"></script>
 <script>
 /* ── Formulaire partenaire → mailto ── */
 document.getElementById('p-submit').addEventListener('click', () => {

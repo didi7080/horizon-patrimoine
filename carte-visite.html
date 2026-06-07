@@ -332,6 +332,13 @@ body {
 .qr-finder-tr { top: 6px; right: 6px; }
 .qr-finder-bl { bottom: 6px; left: 6px; }
 
+.qr-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+}
+
 .qr-scan-lbl {
   font-size: 7px;
   color: #999;
@@ -502,7 +509,7 @@ body {
           <div class="contact-row">
             <span class="c-label">Web</span>
             <span class="c-dot"></span>
-            <span class="c-value">www.horizon-patrimoine.fr</span>
+            <span class="c-value">www.dp-conseil-patrimoine.fr</span>
           </div>
         </div>
         <div class="rule bottom"></div>
@@ -537,12 +544,9 @@ body {
           </div>
           <div class="qr-zone">
             <div class="qr-box">
-              <div class="qr-finder qr-finder-tl"></div>
-              <div class="qr-finder qr-finder-tr"></div>
-              <div class="qr-finder qr-finder-bl"></div>
-              <div class="qr-scan-lbl">À scanner</div>
+              <img src="qr-code.svg" alt="QR code vers www.dp-conseil-patrimoine.fr" class="qr-img" />
             </div>
-            <div class="qr-caption">QR Code</div>
+            <div class="qr-caption">Scannez-moi</div>
           </div>
         </div>
         <div class="rule bottom"></div>
